@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "846435494070",
+    "firebase_url": "https://jsafetransportation.firebaseio.com",
+    "project_id": "jsafetransportation",
+    "storage_bucket": "jsafetransportation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846435494070:android:c4bc4409416624b83fde17",
+        "android_client_info": {
+          "package_name": "br.com.safetransportation.safetransportation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846435494070-iu5ah45988to86dp85ka6c1c138l5ag2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.safetransportation.safetransportation",
+            "certificate_hash": "d29ed5a9f9351dfeef563a1366b2d8ba15b399f9"
+          }
+        },
+        {
+          "client_id": "846435494070-saon7pc83cfov37r951pivh3eiivhh0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSWwxY3tywxjmP0m5Q8UT4LPUCwXJ5VR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846435494070-saon7pc83cfov37r951pivh3eiivhh0n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
