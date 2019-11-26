@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "846435494070-mimvg02i0s0m5pq3ksodmd3dofpc15j4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.safetransportation.safetransportation",
+            "certificate_hash": "4e4c38381a4e82549beb8f90e3162dff9db9272b"
+          }
+        },
+        {
           "client_id": "846435494070-iu5ah45988to86dp85ka6c1c138l5ag2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

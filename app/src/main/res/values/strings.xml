@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SafeTransportation</string>
+    <string name="mensagem">%1$s Informa: Transação %2$s cartão final %3$s de R$ %4$s aprovada em %5$s as %6$s %7$s.</string>
 </resources>

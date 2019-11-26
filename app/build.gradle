@@ -43,9 +43,11 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
     compileOnly 'javax.annotation:jsr250-api:1.0'
     implementation 'javax.inject:javax.inject:1'
-    implementation 'it.xabaras.android:sms-interceptor:1.0'
+   // implementation 'it.xabaras.android:sms-interceptor:1.0'
 
     // Firebase
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-firestore:21.1.1'
+
 }
 
