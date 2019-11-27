@@ -15,7 +15,7 @@ public class Location implements Parcelable
     private Double course;
     @SerializedName("epoch")
     @Expose
-    private Integer epoch;
+    private Double epoch;
     @SerializedName("latitude")
     @Expose
     private Double latitude;
@@ -44,7 +44,7 @@ public class Location implements Parcelable
 
     protected Location(Parcel in) {
         this.course = ((Double) in.readValue((Double.class.getClassLoader())));
-        this.epoch = ((Integer) in.readValue((Integer.class.getClassLoader())));
+        this.epoch = ((Double) in.readValue((Double.class.getClassLoader())));
         this.latitude = ((Double) in.readValue((Double.class.getClassLoader())));
         this.longitude = ((Double) in.readValue((Double.class.getClassLoader())));
         this.speed = ((Integer) in.readValue((Integer.class.getClassLoader())));
@@ -61,11 +61,11 @@ public class Location implements Parcelable
         this.course = course;
     }
 
-    public Integer getEpoch() {
+    public Double getEpoch() {
         return epoch;
     }
 
-    public void setEpoch(Integer epoch) {
+    public void setEpoch(Double epoch) {
         this.epoch = epoch;
     }
 

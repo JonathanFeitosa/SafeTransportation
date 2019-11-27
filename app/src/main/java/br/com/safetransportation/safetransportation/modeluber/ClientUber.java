@@ -25,7 +25,7 @@ public class ClientUber implements Parcelable
     private String tokenState;
     @SerializedName("tokenStateUpdatedAt")
     @Expose
-    private Integer tokenStateUpdatedAt;
+    private String tokenStateUpdatedAt;
     @SerializedName("type")
     @Expose
     private String type;
@@ -66,7 +66,7 @@ public class ClientUber implements Parcelable
         this.client = ((Object) in.readValue((Object.class.getClassLoader())));
         this.status = ((String) in.readValue((String.class.getClassLoader())));
         this.tokenState = ((String) in.readValue((String.class.getClassLoader())));
-        this.tokenStateUpdatedAt = ((Integer) in.readValue((Integer.class.getClassLoader())));
+        this.tokenStateUpdatedAt = ((String) in.readValue((String.class.getClassLoader())));
         this.type = ((String) in.readValue((String.class.getClassLoader())));
         this.beginTripTime = ((Object) in.readValue((Object.class.getClassLoader())));
         this.eta = ((Object) in.readValue((Object.class.getClassLoader())));
@@ -110,11 +110,11 @@ public class ClientUber implements Parcelable
         this.tokenState = tokenState;
     }
 
-    public Integer getTokenStateUpdatedAt() {
+    public String getTokenStateUpdatedAt() {
         return tokenStateUpdatedAt;
     }
 
-    public void setTokenStateUpdatedAt(Integer tokenStateUpdatedAt) {
+    public void setTokenStateUpdatedAt(String tokenStateUpdatedAt) {
         this.tokenStateUpdatedAt = tokenStateUpdatedAt;
     }
 

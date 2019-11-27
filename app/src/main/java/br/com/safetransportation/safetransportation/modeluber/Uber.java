@@ -10,9 +10,9 @@ import com.google.gson.annotations.SerializedName;
 public class Uber implements Parcelable
 {
 
-    @SerializedName("error")
-    @Expose
-    private Error error;
+   // @SerializedName("error")
+  //  @Expose
+  //  private Error error;
     @SerializedName("supply")
     @Expose
     private Supply supply;
@@ -28,9 +28,9 @@ public class Uber implements Parcelable
     @SerializedName("routelines")
     @Expose
     private Routelines routelines;
-    @SerializedName("bedrock")
-    @Expose
-    private Bedrock bedrock;
+   // @SerializedName("bedrock")
+   // @Expose
+   // private Bedrock bedrock;
     public final static Parcelable.Creator<Uber> CREATOR = new Creator<Uber>() {
 
 
@@ -49,25 +49,25 @@ public class Uber implements Parcelable
     ;
 
     protected Uber(Parcel in) {
-        this.error = ((Error) in.readValue((Error.class.getClassLoader())));
+     //   this.error = ((Error) in.readValue((Error.class.getClassLoader())));
         this.supply = ((Supply) in.readValue((Supply.class.getClassLoader())));
         this.vehicle = ((Vehicle) in.readValue((Vehicle.class.getClassLoader())));
         this.jobs = ((Jobs) in.readValue((Jobs.class.getClassLoader())));
         this.waypoints = ((Waypoints) in.readValue((Waypoints.class.getClassLoader())));
         this.routelines = ((Routelines) in.readValue((Routelines.class.getClassLoader())));
-        this.bedrock = ((Bedrock) in.readValue((Bedrock.class.getClassLoader())));
+      //  this.bedrock = ((Bedrock) in.readValue((Bedrock.class.getClassLoader())));
     }
 
     public Uber() {
     }
 
-    public Error getError() {
+  /*  public Error getError() {
         return error;
     }
 
     public void setError(Error error) {
         this.error = error;
-    }
+    } */
 
     public Supply getSupply() {
         return supply;
@@ -109,22 +109,22 @@ public class Uber implements Parcelable
         this.routelines = routelines;
     }
 
-    public Bedrock getBedrock() {
-        return bedrock;
-    }
+   // public Bedrock getBedrock() {
+    //    return bedrock;
+   // }
 
-    public void setBedrock(Bedrock bedrock) {
-        this.bedrock = bedrock;
-    }
+    //public void setBedrock(Bedrock bedrock) {
+      //  this.bedrock = bedrock;
+   // }
 
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(error);
+     //   dest.writeValue(error);
         dest.writeValue(supply);
         dest.writeValue(vehicle);
         dest.writeValue(jobs);
         dest.writeValue(waypoints);
         dest.writeValue(routelines);
-        dest.writeValue(bedrock);
+      //  dest.writeValue(bedrock);
     }
 
     public int describeContents() {

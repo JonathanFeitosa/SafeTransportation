@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import br.com.safetransportation.safetransportation.api.ApiServiceInterface
 import br.com.safetransportation.safetransportation.modeluber.Uber
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         verificarPermissoes();
-
+    // bKYTpysR
      //   testeFirebase();
 
         val intentFilter = IntentFilter()
@@ -85,10 +86,17 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun testeFirebase(){
+    fun testeFirebase(info : Uber){
         val db = FirebaseFirestore.getInstance()
 
     // Create a new user with a first and last name
+
+
+        // Update the timestamp field with the value from the server
+        val updates = hashMapOf<String, Any>(
+            "timestamp" to FieldValue.serverTimestamp()
+        )
+
         var user = hashMapOf(
                 "first" to "Ada",
                 "last" to "Lovelace",
@@ -96,8 +104,8 @@ class MainActivity : AppCompatActivity() {
             )
 
     // Add a new document with a generated ID
-            db.collection("users")
-                .add(user)
+            db.collection("teste")
+                .add(info)
                 .addOnSuccessListener { documentReference ->
                     Log.d("ResultadoJFS", "DocumentSnapshot added with ID: ${documentReference.id}")
                 }
@@ -105,23 +113,8 @@ class MainActivity : AppCompatActivity() {
                     Log.w("ResultadoJFS", "Error adding document", e)
                 }
 
-        // Create a new user with a first, middle, and last name
-        user = hashMapOf(
-            "first" to "Alan",
-            "middle" to "Mathison",
-            "last" to "Turing",
-            "born" to 1912
-        )
+       // .document("frank").db.update(updates).addOnCompleteListener { }
 
-// Add a new document with a generated ID
-        db.collection("corridas")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d("ResultadoJFS", "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w("ResultadoJFS", "Error adding document", e)
-            }
     }
     fun checkJSONUber(link: String) {
 
@@ -144,13 +137,15 @@ class MainActivity : AppCompatActivity() {
                         if (readed.replace(" ", "").length > 8) {
                             if (readed.replace(" ", "").substring(0, 9).equals("{\"error\":")) {
 
+                                Log.i("ResultadoJFS", "ENTROU 1");
                                 if(!(readed.trimStart().contains("Unable to fetch the share link"))) {
                                     Log.e("JFSRESULTADO", "Success 3: ${readed.trimStart()}")
 
                                     var gson = Gson()
                                     var mMineUserEntity = gson?.fromJson(readed.trimStart(), Uber::class.java)
 
-                                    Log.i("ResultadoJFS", mMineUserEntity.jobs.get1().status.toString());
+                                    testeFirebase(mMineUserEntity)
+                                    Log.i("ResultadoJFS", "ENTROU 2");
 
                                 }
 
